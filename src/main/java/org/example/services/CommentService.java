@@ -11,11 +11,11 @@ public class CommentService {
 
     private final Logger logger = Logger.getLogger(CommentService.class.getName());
 
+    @ToLog
     public void publishComment(Comment comment) {
         logger.info("Publishing comment: " + comment.getText());
     }
 
-    @ToLog
     public void deleteComment(Comment comment) {
         logger.info("Deleting comment: " + comment.getText());
     }
