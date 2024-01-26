@@ -1,6 +1,7 @@
 package org.example.main;
 
 import org.example.config.ProjectConfig;
+import org.example.models.Comment;
 import org.example.services.CommentService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -10,6 +11,10 @@ public class Main {
 
         var service = context.getBean(CommentService.class);
 
-        System.out.println(service.getClass());
+        Comment comment = new Comment();
+        comment.setText("Demo comment");
+        comment.setAuthor("Natasha");
+
+        service.publishComment(comment);
     }
 }
